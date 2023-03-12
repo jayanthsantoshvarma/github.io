@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.ttt-main-heading {
+    font-size: 36px;
+    text-align: center;
+    color: darkblue;
+}
+
+.ttt-result {
+    font-size: 30px;
+    text-align: center;
+    font-family: "Roboto";
+    color: green;
+    font-weight: bold;
+}
+
+.bg-container {
+    padding: 40px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f5efd4;
+}
+
+.game-area {
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.box {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: darkblue;
+    font-size: 80px;
+}
+
+.box1 {
+    border-right: 3px solid darkblue;
+    border-bottom: 3px solid darkblue;
+}
+
+.box2 {
+    border-right: 3px solid darkblue;
+    border-bottom: 3px solid darkblue;
+}
+
+.box3 {
+    border-bottom: 3px solid darkblue;
+}
+
+.box4 {
+    border-right: 3px solid darkblue;
+}
