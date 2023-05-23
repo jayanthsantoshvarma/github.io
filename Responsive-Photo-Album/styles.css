@@ -1,0 +1,13 @@
+body{
+    margin: 0px
+}
+.bg-container{
+    background-color: grey;
+    padding: 24px;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+img{
+    border-radius: 48px;
+}
