@@ -72,6 +72,7 @@ let boxClicked = (event) => {
             const winner = currentPlayer;
             resultElmt.textContent = `${winner} WON!`;
             headingElmt.textContent = "GAME OVER";
+            box.style.color = "#f5efd4";
             return;
         }
         if (resultElmt.textContent === "" && !(sequenceCombination.includes(null))){
