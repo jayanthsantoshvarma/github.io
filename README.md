@@ -1,2 +1,2 @@
 # github.io
-This is a S6 Full Stack Development Course Repository
+This is a S6 Full Stack Development Course -> Project Repository
