@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Person's Image</title>
+    <style>
+      #caption{
+        margin-top: 32px;
+        margin-bottom: 32px;
+        text-align:center;
+        font-size: 40px;;
+      }
+      #image{
+        display: block;
+        margin: 0 auto;
+        height: auto;
+        width: 600px;
+        border: 10px solid white;
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.8);
+        padding: 10px;
+      }
+      .btn{
+        margin-left: 15px;
+        margin-top:32px;
+      }
+      .btn:hover {
+        color: #fff;
+        background-color: black;
+        border-color: black;
+      }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  <body style="background-color:floralwhite ;font-family:monospace;">
+    <header>
+      <h1 id="caption" style="font-weight: 600;"></h1>
+    </header>
+    <div id="image-container">
+      <img id="image" src="" class="img-fluid" alt="">
+      <div class="row mt-3">
+        <div class="col-sm-12 text-center">
+            <button class="btn btn-outline-primary btn-filter" onclick="applyRedFilter()">Red Filter</button>
+            <button class="btn btn-outline-primary btn-filter" onclick="applyYellowFilter()">Yellow Filter</button>
+            <button class="btn btn-outline-primary btn-filter" onclick="applyGreenFilter()">Green Filter</button>
+            <button class="btn btn-outline-primary btn-filter" onclick="applyBlur()">Blur</button>
+            <button class="btn btn-outline-primary btn-filter" onclick="applyInverse()">Inverse</button>
+            <!-- <button class="btn btn-secondary btn-filter" onclick="increaseBrightness()">Increase Brightness</button> -->
+            <button class="btn btn-outline-primary btn-filter" onclick="increaseContrast()">Increase Contrast</button>
+        </div>
+        <div class="col-sm-12 text-center">
+          <button class="btn btn-outline-danger btn-filter" onclick="showOriginal()">Reset</button>
+        </div>
+    </div>
+    </div>
+    <script>
+      // Get query parameters
+      const params = new URLSearchParams(window.location.search);
+      const imgSrc = params.get('img');
+      const caption = params.get('caption');
+
+      // Set image source and caption
+      const image = document.getElementById('image');
+      image.src = imgSrc;
+      const captionHeader = document.getElementById('caption');
+      captionHeader.textContent = caption;
+    </script>
+
+    <script>
+        let originalImage;
+        
+        window.onload = () => {
+            originalImage = document.getElementById("image").src;
+        }
+
+        const applyYellowFilter = () => {
+            const img = document.getElementById("image");
+            img.style.filter = "sepia(100%) saturate(5) hue-rotate(340deg)";
+        }
+
+        const applyGreenFilter = () => {
+            const img = document.getElementById("image");
+            img.style.filter = "sepia(90%) saturate(5) hue-rotate(30deg)";
+        }
+
+        const applyRedFilter = () => {
+            const img = document.getElementById("image");
+            img.style.filter = "sepia(43.9%) saturate(10) hue-rotate(0deg)";
+        }
+
+        const increaseBrightness = () => {
+            const img = document.getElementById("image");
+            img.style.filter = "brightness(150%)";
+        }
+
+        const applyGrayScale = () => {
+            const img = document.getElementById("image");
+            img.style.filter = "grayscale(100%)";
+        }
+
+        const applyBlur = () => {
+            const img = document.getElementById("image");
+            img.style.filter = "blur(5px)";
+        }
+
+        const showOriginal = () => {
+            const img = document.getElementById("image");
+            img.src = originalImage;
+            img.style.filter = "";
+        }
+
+        const applyInverse = () => {
+            const img = document.getElementById("image");
+            img.style.filter = "invert(100%)";
+        }
+
+        const increaseContrast = () => {
+            const img = document.getElementById("image");
+            img.style.filter = "contrast(150%)";
+        }
+    </script>
+  </body>
+</html>
